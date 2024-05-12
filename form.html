@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+
+  input[type=text], select {
+    width: calc(100% - 40px);
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<center><h3>INVESTICA FREELANCER INFORMATION</h3></center>
+
+<div>
+  <form method="POST" name="google-sheet">
+    <label for="Name">Name</label>
+    <input type="text" id="fname" name="Name" placeholder="Your name..">
+
+    <label for="email">EMAIL</label>
+    <input type="text" id="lname" name="email" placeholder="Your email..">
+
+    <label for="skill">SKILL</label>
+    <input type="text" id="lname" name="skill" placeholder="Your skill..">
+
+    <input type="submit" value="Submit" name="submit">
+  </form>
+</div>
+
+<div class="button-container">
+  <a href="http://127.0.0.1:5500/one(3).html" class="button">Know the Top Contributors of the week</a>
+  <a href="https://cybernity.org/" class="button">Join Like-minded people of your Interest</a>
+</div>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzk2TmqfloS0wOHDYxutHAEscQhxq6STcFhxU7_NvRpwFHxfkC42BPbBNJHj3WOizh_SQ/exec';
+  const form = document.forms['google-sheet'];
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+      .catch(error => console.error('Error!', error.message));
+  });
+</script>
+
+</body>
+</html>

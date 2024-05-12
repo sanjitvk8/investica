@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+  
+  #awards ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #awards ul li {
+    margin-bottom: 1rem;
+  }
+  
+  .user {
+    font-weight: bold;
+  }
+  
+  .award {
+    color: #007bff;
+  }

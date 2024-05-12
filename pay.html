@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Your styles */
+        /* Style for navbar */
+        .navbar {
+            background-color: purple;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* Style for navbar link */
+        .navbar a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Style for submit button */
+        .submit-button {
+            background-color: purple;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove default button underline */
+        }
+
+        .submit-button:hover {
+            background-color: #6a0dad; /* Darker shade of purple on hover */
+        }
+
+        /* Style for timer container */
+        #timer-container {
+            background-color: #f0f0f0; /* Grey background */
+            border-radius: 50px; /* Make it round */
+            padding: 5px 15px; /* Add some padding */
+            display: inline-block; /* Make it inline to surround only the time */
+        }
+
+        /* Style for timer */
+        #timer {
+            color: green;
+            font-size: 24px; /* Adjust font size as needed */
+            font-weight: bold; /* Bold font */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#">PAYMENTS</a>
+    </div>
+
+    <!-- Image -->
+    <br>
+    <br>
+    <center><img src="qrppa.jpg" alt="Image" width="300" height="300"></center> <!-- Updated image source -->
+
+    <!-- Timer -->
+    <br>
+    <center>
+        <div id="timer-container">
+            Time Remaining: <span id="timer">5:00</span>
+        </div>
+    </center>
+
+    <!-- Submit Button -->
+    <br>
+    <center><a href="http://127.0.0.1:5500/successful.html" class="submit-button">Submit</a></center>
+
+    <!-- Your script -->
+    <script>
+        // Timer countdown
+        var seconds = 300; // 5 minutes
+        function countdown() {
+            var timerDisplay = document.getElementById('timer');
+            var minutes = Math.floor(seconds / 60);
+            var remainingSeconds = seconds % 60;
+            if (remainingSeconds < 10) {
+                remainingSeconds = "0" + remainingSeconds; 
+            }
+            timerDisplay.textContent = minutes + ":" + remainingSeconds;
+            if (seconds <= 0) {
+                clearInterval(countdownTimer);
+                timerDisplay.textContent = "Time's up!";
+            } else {
+                seconds--;
+            }
+        }
+        var countdownTimer = setInterval(countdown, 1000);
+    </script>
+</body>
+</html>

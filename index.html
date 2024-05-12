@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('BGBLUR.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            /* Optional: This will change the text color to white for better readability */
+            overflow: hidden; /* Hide any overflow */
+            position: relative; /* Added to position buttons and box */
+            min-height: 100vh; /* Ensures body takes up at least the full viewport height */
+        }
+        
+        h3 {
+            position: relative; /* Position the heading relative to its normal position */
+            animation: scrollText 15s linear infinite; /* Apply the animation */
+            color: red;
+        }
+
+        @keyframes scrollText {
+            0% { left: -100%; } /* Start position */
+            100% { left: 100%; } /* End position */
+        }
+
+        .button-container {
+            position: absolute;
+            top: 105px; /* Move the buttons to the top */
+            left: 0;
+            width: 100%;
+            padding: 0 10px; /* Added padding for spacing */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button-group-left {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        .button-group-right {
+            display: flex;
+        }
+
+        .button {
+            background-color: green;
+            color: white;
+            padding: 10px 22px;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+            margin-right: 11px; /* Added to create space between buttons */
+        }
+
+        .blue-button {
+            background-color: blue;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px; /* Adjusted margin top */
+        }
+
+        .card {
+            flex-grow: 1;
+            background-color: rgba(255, 255, 255, 0.5); /* Increased opacity for brighter cards */
+            padding: 200px; /* Increased padding for taller cards */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(232, 180, 24, 0.3); /* Transparent white box shadow */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            line-height: 1.5; /* Adjusted line height for better text alignment */
+            position: relative; /* Position buttons relative to the card */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Button styles */
+        .card .button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Add image to the third card */
+        .card:nth-child(3) {
+            background-image: url('SECUREIMAGE1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Add image to the second card */
+        .card:nth-child(2) {
+            background-image: url('download.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card:nth-child(1) {
+            background-image: url('CRD1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Ribbon container styles */
+        .ribbon-container {
+            background-color: #ffd700; /* Golden color */
+            padding: 25px 500px; /* Add padding */
+            border-radius: 100px; /* Rounded corners */
+            display: flex; /* Enable flexbox */
+            justify-content: center; /* Center align buttons */
+        }
+    </style>
+</head>
+<body>
+    <center><h1><span style="color: #ffcc00;">In</span>vestica</h1></center>
+    <h3>Empower Bangalore's freelance workforce by facilitating seamless connections with clients.</h3>
+
+    <div class="ribbon-container">
+        <div class="button-container">
+            <div class="button-group-left">
+                <a href="https://vvce.ac.in/" class="button">HOME</a>
+                <a href="https://vvce.ac.in/about-us/" class="button">ABOUT</a>
+                <a href="https://vvce.ac.in/admissions/" class="button">SERVICE</a>
+                <a href="https://vvce.ac.in/contact-us/" class="button">CONTACT</a>
+            </div>
+            <div class="button-group-right">
+                <a href="http://127.0.0.1:5500/Signup.html" class="button">Sign In</a>
+                <a href="http://127.0.0.1:5500/Login.html" class="button">Login</a>
+            </div>
+        </div> 
+    </div>
+    <br>
+    <center><a href="https://w3resource.com/c-programming-exercises/practice/index.php" class="button">PREMIUM</a></center>
+    <div class="card-container">
+        <div class="card">
+            <a href="http://127.0.0.1:5500/form.html" class="button">Searching Jobs?</a>
+        </div>
+        <div class="card">
+            <a href="http://127.0.0.1:5000" class="button">TalentAI</a>
+        </div>
+        <div class="card">
+            <a href="http://127.0.0.1:5500/pay.html" class="button">Payments</a>
+        </div>
+    </div>
+    <br>
+    <br>  
+</body>
+</html>

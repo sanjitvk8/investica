@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Your styles */
+        /* Style for navbar */
+        .navbar {
+            background-color: purple;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* Style for navbar link */
+        .navbar a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Style for submit button */
+        .submit-button {
+            background-color: purple;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #6a0dad; /* Darker shade of purple on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#">PAYMENTS</a>
+    </div>
+
+    <!-- Image -->
+    <br>
+    <br>
+    <center><img src="gpay.png" alt="Image" width="300" height="300"></center> <!-- Updated image source with 300x300 pixels -->
+
+    <!-- Timer -->
+    <br>
+
+    <!-- Submit Button -->
+    <br>
+    <center><button class="submit-button" id="date-time"></button></center>
+
+    <!-- Your script -->
+    <script>
+        // Get the current date and time
+        var dateTime = new Date();
+        var dateTimeString = "TRANSACTION DONE AT: " + dateTime.toLocaleString();
+        // Set the button text to the current date and time
+        document.getElementById("date-time").textContent = dateTimeString;
+
+        // Timer countdown
+        var seconds = 300; // 5 minutes
+        function countdown() {
+            var timerDisplay = document.getElementById('timer');
+            var minutes = Math.floor(seconds / 60);
+            var remainingSeconds = seconds % 60;
+            if (remainingSeconds < 10) {
+                remainingSeconds = "0" + remainingSeconds; 
+            }
+            timerDisplay.textContent = minutes + ":" + remainingSeconds;
+            if (seconds <= 0) {
+                clearInterval(countdownTimer);
+                timerDisplay.textContent = "Time's up!";
+            } else {
+                seconds--;
+            }
+        }
+        var countdownTimer = setInterval(countdown, 1000);
+    </script>
+</body>
+</html>
